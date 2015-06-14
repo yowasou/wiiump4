@@ -44,6 +44,3 @@ group :development, :test do
 end
 
 gem 'heroku'
-gem 'carrierwave'
-gem 'carrierwave-postgresql'
-gem 'postgresql_lo_streamer'
