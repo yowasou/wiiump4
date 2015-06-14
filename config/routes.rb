@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :hellos
-  root 'articles#index'
-  resources :articles do
-    member { get :image }
+  resources :users
+  resources :users do
+    member {
+      get :icon
+    }
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

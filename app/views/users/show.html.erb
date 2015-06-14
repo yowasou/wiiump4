@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @user.filename %>
+  <br/>
+  <%= image_tag icon_user_path(@user) %>
+</p>
+
+<p>
+  <strong>Icon content type:</strong>
+  <%= @user.icon_content_type %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
