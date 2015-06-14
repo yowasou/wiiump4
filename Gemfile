@@ -43,3 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'heroku'
+gem 'carrierwave'
+gem 'carrierwave-postgresql'
+gem 'postgresql_lo_streamer'
