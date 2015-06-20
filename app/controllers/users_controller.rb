@@ -27,7 +27,11 @@ class UsersController < ApplicationController
     params[:user][:icon].each do |file|
       @user = User.new(user_params)
       @user.filename = file.original_filename
-      @user.icon = file.read
+      #@user.icon = file.read
+      video = Video.create
+      video.video_data = file.read
+      video.save
+      @user.video_id = video.id
       @user.icon_content_type = file.content_type
       @user.save
     end
@@ -56,7 +60,8 @@ class UsersController < ApplicationController
     end
   end
   def icon
-    send_data(@user.icon, type: @user.icon_content_type, disposition: :inline)
+    #ビデオ（または画像）を検索して返す
+    send_data(Video.find(@user.video_id).video_data, type: @user.icon_content_type, disposition: :inline)
   end
   # DELETE /users/1
   # DELETE /users/1.json
