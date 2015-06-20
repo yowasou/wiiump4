@@ -1,5 +1,4 @@
 class Video < ActiveRecord::Base
-  belongs_to :user
   def encryptor
     secret = ENV["ENC_KEY"]
     ::ActiveSupport::MessageEncryptor.new(secret)

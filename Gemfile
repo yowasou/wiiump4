@@ -44,3 +44,5 @@ group :development, :test do
 end
 
 gem 'heroku'
+gem 'remotipart'
+gem 'thin'

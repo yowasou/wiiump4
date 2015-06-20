@@ -1,3 +1,2 @@
-class User < ActiveRecord::Base
-  has_one :video, dependent: :destroy
+class User < ActiveRecord::Base  
 end
