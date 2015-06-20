@@ -30,6 +30,14 @@ class UsersController < ApplicationController
       #@user.icon = file.read
       video = Video.create
       video.video_data = file.read
+      #10バイトずつ読み込み
+      #loop do
+      #  r = f.read(10)
+      #
+      #  if (f.eof)
+      #    break
+      #  end
+      #end
       video.save
       @user.video_id = video.id
       @user.icon_content_type = file.content_type
