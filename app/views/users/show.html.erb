@@ -19,14 +19,17 @@ $(document).ready(function(){
   <strong>Icon:</strong>
   <%= @user.filename %>
   <br/>
+  <a href="/<%= @user.icon_path %>"><%= @user.icon_path %></a><br>
   <img src="/<%= @user.icon_path %>">
-  <!-- <%= video_tag icon_user_path(@user) %> -->
+  <video src="/<%= @user.icon_path %>" loop controls></video>
+  <!--
   <div class="flowplayer" id="theVideo">
      <video preload="none" autoplay>
         <source type="video/webm" src="/<%= @user.icon_path %>">
         <source type="video/mp4" src="/<%= @user.icon_path %>">
      </video>
   </div>
+  -->
 </p>
 
 <p>
