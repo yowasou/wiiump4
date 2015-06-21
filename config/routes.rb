@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :users do
     member {
-      get :icon
+      get :icon, :icon_path
     }
   end
 end

@@ -5,11 +5,18 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    #dataフォルダ以下を全部削除
+    dataPath = Rails.public_path.join("data")
+    FileUtils.rm_rf(dataPath)
+    FileUtils.mkdir_p(dataPath) unless FileTest.exist?(dataPath)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    #ファイル出力
+    @user = User.find(params[:id])
+    File.binwrite(Rails.public_path.join(@user.icon_path), Video.find(@user.video_id).video_data)
   end
 
   # GET /users/new
@@ -67,9 +74,10 @@ class UsersController < ApplicationController
       end
     end
   end
-  def icon
-    #ビデオ（または画像）を検索して返す
-    send_data(Video.find(@user.video_id).video_data, type: @user.icon_content_type, disposition: :inline)
+  def icon_path
+    @user = User.find(params[:id])
+    render :text => "data/" + @user.filename
+    #send_data(Video.find(@user.video_id).video_data, type: @user.icon_content_type, disposition: :inline)
   end
   # DELETE /users/1
   # DELETE /users/1.json
