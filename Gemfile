@@ -46,3 +46,4 @@ end
 gem 'heroku'
 gem 'remotipart'
 gem 'thin'
+gem 'flowplayer'

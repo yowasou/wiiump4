@@ -11,6 +11,11 @@
   <br/>
   <%= image_tag icon_user_path(@user) %>
   <%= video_tag icon_user_path(@user) %>
+  <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
+     <video>
+        <source type="video/mp4" src=<%= icon_user_path(@user) %>>
+     </video>
+  </div>
 </p>
 
 <p>
